@@ -16,3 +16,11 @@ Route::view('/admin', 'admin.dashboard.index');
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* BACKEND */
+/* Rutas Producto*/
+Route::get('admin/productos','ProductosController@index')->name('productos.index');
+
+
+/* Dashboard */
+Route::get('admin/dashboard','DashboardController@index')->name('dashboard.index');
