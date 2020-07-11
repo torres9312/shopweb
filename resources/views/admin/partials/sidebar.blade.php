@@ -8,7 +8,7 @@
     </div>
     <ul class="app-menu">
         <li>
-            <a class="app-menu__item" href="{{route('dashboard.index')}}"><i class="app-menu__icon fa fa-dashboard"></i>
+            <a class="app-menu__item" href="{{route('admin.index')}}"><i class="app-menu__icon fa fa-dashboard"></i>
                 <span class="app-menu__label">Dashboard</span>
             </a>
         </li>
