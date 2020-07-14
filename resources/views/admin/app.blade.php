@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/sweetalert2.min.css') }}">
 
     <script src="{{ asset('backend/js/jquery-3.2.1.min.js') }}"></script>
-
     <script src="{{ asset('backend/js/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('backend/js/custom.js') }}"></script>
     <script src="{{ asset('backend/js/popper.min.js') }}"></script>

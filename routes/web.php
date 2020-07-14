@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('/admin', 'admin.dashboard.index')->name('admin.index');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 /* BACKEND */
@@ -29,5 +29,8 @@ Route::delete('admin/productos/{id}','ProductosController@destroy')->name('produ
 
 
 /* Dashboard */
-Route::get('admin/dashboard','DashboardController@index')->name('dashboard.index');
+Route::get('/admin', 'adminController@index')->name('dashboard.index');
 
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');

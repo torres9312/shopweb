@@ -1,14 +1,19 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
     <div class="app-sidebar__user">
-        <div>
-            <p class="app-sidebar__user-name">User</p>
-            <p class="app-sidebar__user-designation">Frontend Developer</p>
+        <div class="profile">
+            @if(Auth::user()->imagen == '')
+            <img class="app-sidebar_profile" src="{{asset(Auth::user()->genero == 'male' ? 'backend/img/male.png' : 'backend/img/female.png')}}" style="width:150px;height:150px" alt="">
+            @else
+            <img class="app-sidebar_profile" src="{{asset('backend/img/users/'.Auth::user()->imagen)}}" style="width:150px;height:150px" alt="">
+            @endif
+            <p class="app-sidebar__user-name">{{ Auth::user()->name }}</p>
+            <p class="app-sidebar__user-designation">Administrador</p>
         </div>
     </div>
     <ul class="app-menu">
         <li>
-            <a class="app-menu__item" href="{{route('admin.index')}}"><i class="app-menu__icon fa fa-dashboard"></i>
+            <a class="app-menu__item" href="{{route('dashboard.index')}}"><i class="app-menu__icon fa fa-dashboard"></i>
                 <span class="app-menu__label">Dashboard</span>
             </a>
         </li>
