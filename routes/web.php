@@ -12,10 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
 });
+
+
+/* Dashboard */
+Route::get('/admin', 'AdminController@index')->name('dashboard.index');
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 /* BACKEND */
 /* Rutas Producto*/
@@ -26,11 +34,18 @@ Route::get('admin/productos/edit/{id}','ProductosController@edit')->name('produc
 Route::match(['put','patch'],'admin/productos/{id}','ProductosController@update')->name('productos.update');
 Route::delete('admin/productos/{id}','ProductosController@destroy')->name('productos.destroy');
 
+/* Rutas Usuarios */
+Route::get('admin/users','UsersController@index')->name('users.index');
+Route::get('admin/users/create','UsersController@create')->name('users.create');
+Route::post('admin/users','UsersController@store')->name('users.store');
+Route::get('admin/users/edit/{id}','UsersController@edit')->name('users.edit');
+Route::match(['put','patch'],'admin/users/{id}','UsersController@update')->name('users.update');
+Route::delete('admin/users/{id}','UsersController@destroy')->name('users.destroy');
 
 
-/* Dashboard */
-Route::get('/admin', 'adminController@index')->name('dashboard.index');
 
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+/* FRONTEND */
+/* Index */
+Route::get('/','IndexController@index')->name('frontend.index');
+

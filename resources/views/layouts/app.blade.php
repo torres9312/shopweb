@@ -7,19 +7,22 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'ShopWeb') }}</title>
     
     <!-- Scripts -->
-    <script src="{{ asset('backend/js/bootstrap.min.js') }}" defer></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/images/favicon-32x32.png') }}" />
     <script src="{{ asset('backend/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('backend/js/custom.js') }}"></script>
     <script src="{{ asset('backend/js/popper.min.js') }}"></script>
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/font-awesome/4.7.0/css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/main.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/custom.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/custom.css') }}" />
 
 </head>
 <body>
@@ -27,7 +30,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'ShopWeb') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -83,4 +86,5 @@
 
 <script src="{{ asset('backend/js/main.js') }}"></script>
 <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
+
 </html>

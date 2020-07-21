@@ -20,6 +20,8 @@ class Producto extends Model
         'descripcion',
         'marca',
         'estatus',
-        'stock'
+        'stock',
+        'create_at',
+        'update_at'
     ];
 }

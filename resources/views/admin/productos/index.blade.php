@@ -27,9 +27,9 @@
         <tr>
           <th scope="col">Imagen</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Precio</th>
+          <th scope="col" style="width:80px">Precio</th>
           <th scope="col">Medida</th>
-          <th scope="col">Unidad Medida</th>
+          <th scope="col" style="width:100px">U. Medida</th>
           <th scope="col">Descripcion</th>
           <th scope="col">Marca</th>
           <th scope="col">Estatus</th>
@@ -41,7 +41,7 @@
         <tr>
           <td><img style="width:100px;height:100px;" src="{{asset('backend/img-products/'.$item->imagen)}}"></td>
           <td>{{$item->nombre}}</td>
-          <td>$ {{$item->precio}}</td>
+          <td><p>$ {{$item->precio}}</p></td>
           <td>{{$item->medida}}</td>
           <td>{{$item->unidad_medida}}</td>
           <td>{{$item->descripcion}}</td>

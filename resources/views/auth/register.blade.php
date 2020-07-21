@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Apellidos') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="Apellidos" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -43,7 +57,7 @@
                             <label for="genero" class="col-md-4 col-form-label text-md-right">{{ __('Genero') }}</label>
 
                             <div class="col-md-6">
-                                    <select class="custom-select select-input" id="genero" name="genero">
+                                    <select class="custom-select select-input" style="font-size:18px; font-family: 'ManropeRegular';" id="genero" name="genero">
                                         <option selected disabled value="Seleccionar">Seleccionar</option>
                                         <option value="Hombre">Hombre</option>
                                         <option value="Mujer">Mujer</option>

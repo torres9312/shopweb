@@ -13,7 +13,7 @@ class ProductosController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth');
+            $this->middleware('isAdmin');   
     }
 
     
@@ -57,6 +57,8 @@ class ProductosController extends Controller
         $producto->marca = $request->get('marca');
         $producto->estatus = $request->get('estatus');
         $producto->stock = $request->get('stock');
+        $timestamp = date('Y-m-d H:i:s');
+        $producto->create_at = $timestamp;
 
         $producto->save();
         return redirect()->route('productos.index');
@@ -93,6 +95,8 @@ class ProductosController extends Controller
         $producto->marca = $request->get('marca');
         $producto->estatus = $request->get('estatus');
         $producto->stock = $request->get('stock');
+        $timestamp = date('Y-m-d H:i:s');
+        $producto->update_at = $timestamp;
 
         $producto->update();
 

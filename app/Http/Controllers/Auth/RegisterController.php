@@ -51,6 +51,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'genero' => ['required','in:Hombre,Mujer']
@@ -66,16 +67,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if($data['genero'] == 'Hombre'){
-            $data['genero'] == 'male';
+            $imagen = 'male.png';
         }else{
-            $data['genero'] == 'female';
+            $imagen = 'female.png';
         }
-
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'genero' => $data['genero'],
-            'imagen' => "",
+            'apellidos' => $data['lastname'],
+            'imagen' => $imagen,
             'password' => Hash::make($data['password']),
         ]);
     }
